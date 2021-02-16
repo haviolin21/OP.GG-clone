@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Nav from "./Components/Nav";
+import Search from "./Components/Search";
+import bgImg from "./images/sheen.png";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick = (e) => {
+    e.preventDefault();
+  };
+
+  render() {
+    return (
+      <div>
+        <Nav />
+        <img src={bgImg} alt="" class="center" />
+        <Search />
+      </div>
+    );
+  }
 }
 
 export default App;
